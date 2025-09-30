@@ -4,10 +4,11 @@ import java.util.Scanner;
 public class AmanchiBhutaniMadLibs {
     private static final Scanner scanner = new Scanner(System.in);
     public static void main(String[] args) {
-        System.out.println("--- Welcome to the Mad Libs Generator! ---");
-        HashMap<String, String> wordSubstitutions = collectInputs();
-        generateStory(wordSubstitutions);
-        scanner.close();
+        try (scanner) {
+            System.out.println("--- Welcome to the Mad Libs Generator! ---");
+            HashMap<String, String> wordSubstitutions = collectInputs();
+            generateStory(wordSubstitutions);
+        }
     }
 
     public static HashMap<String, String> collectInputs() {
@@ -40,12 +41,13 @@ public class AmanchiBhutaniMadLibs {
     }
 
     public static void generateStory(HashMap<String, String> substitutions) {
-        String storyTemplate = String.format(
-            "\n*** Your Completed Mad Lib ***\n" +
-            "In the universe 216 of the MCU there was a %s named %s.\n" +
-            "They dreamt of finding all of the %s infinity stones that could gain them power and rule the world %s.\n" +
-            "One day, while exploring the universe, they saw a group of %s\n" +
-            "that began to %s loudly. The %s named %s quickly fought them and then the universe was protected and they gaiend the inifnity stones",
+        String storyTemplate = String.format("""
+                                             
+                                             *** Your Completed Mad Lib ***
+                                             In the universe 216 of the MCU there was a %s named %s.
+                                             They dreamt of finding all of the %s infinity stones that could gain them power and rule the world %s.
+                                             One day, while exploring the universe, they saw a group of %s
+                                             that began to %s loudly. The %s named %s quickly fought them and then the universe was protected and they gaiend the inifnity stones""",
             substitutions.get("NOUN_S"),      
             substitutions.get("NAME"),        
             substitutions.get("ADJECTIVE_1"), 
