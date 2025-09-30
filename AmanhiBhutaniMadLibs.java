@@ -42,10 +42,10 @@ public class AmanchiBhutaniMadLibs {
     public static void generateStory(HashMap<String, String> substitutions) {
         String storyTemplate = String.format(
             "\n*** Your Completed Mad Lib ***\n" +
-            "In a galaxy far, far away, there lived a lonely %s named %s.\n" +
-            "They dreamt of finding a large, %s ship that could take them to the beautiful planet %s.\n" +
-            "One day, while exploring the asteroid belt, they saw a group of %s\n" +
-            "that began to %s loudly. The %s named %s quickly climbed into a rusty escape pod and flew away at top speed.",
+            "In the universe 216 of the MCU there was a %s named %s.\n" +
+            "They dreamt of finding all of the %s infinity stones that could gain them power and rule the world %s.\n" +
+            "One day, while exploring the universe, they saw a group of %s\n" +
+            "that began to %s loudly. The %s named %s quickly fought them and then the universe was protected and they gaiend the inifnity stones",
             substitutions.get("NOUN_S"),      
             substitutions.get("NAME"),        
             substitutions.get("ADJECTIVE_1"), 
