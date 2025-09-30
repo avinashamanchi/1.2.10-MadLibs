@@ -34,7 +34,7 @@ Our approach to this assignment focused on clear separation of concerns using tw
 ## Screenshots of Program Functionality
 
 ### 1. Program Prompting for Inputs
-![Uploading Screenshot 2025-09-30 at 11.04.55 AM.png…]()
+<img width="299" height="68" alt="Screenshot 2025-09-30 at 11 07 03 AM" src="https://github.com/user-attachments/assets/de948b81-9b99-4b19-b4b9-9f25b46288a7" />
 
 
 ### 2. Final Mad Lib Output
