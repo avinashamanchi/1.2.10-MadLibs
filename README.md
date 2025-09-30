@@ -20,7 +20,7 @@ Our approach to this assignment focused on clear separation of concerns using tw
 
 ---
 
-## Milestones (Based on Project Development)
+## Project Development
 
 | Milestone | Date Completed | Description |
 | :--- | :--- | :--- |
