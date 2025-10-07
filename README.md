@@ -1,7 +1,6 @@
 # 1.2.10-MadLibs
 
 **Authors:** Avinash Amanchi, Hrihaan Bhutani
-**File:** AmanchiBhutaniMadLibs.java  
 ---
 
 ## Program Approach
