@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Amanchi_MadLibs {
+public class AmanchiBhutaniMadLibs {
 
     public static String getWord(Scanner input, String wordType) {
         System.out.print("Enter a " + wordType + ": ");
