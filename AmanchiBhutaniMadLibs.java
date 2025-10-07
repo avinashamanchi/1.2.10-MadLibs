@@ -1,64 +1,40 @@
-import java.util.HashMap;
 import java.util.Scanner;
 
-public class AmanchiBhutaniMadLibs {
-    private static final Scanner scanner = new Scanner(System.in);
+public class Amanchi_MadLibs {
+
+    public static String getWord(Scanner input, String wordType) {
+        System.out.print("Enter a " + wordType + ": ");
+        return input.nextLine();
+    }
+
+    public static String createStory(String noun1, String verb1, String adjective1, String noun2, String verb2, String adjective2, String noun3) {
+        String story = "";
+        story += "The " + noun1 + " " + verb1 + " across the " + adjective1 + " ocean.\n";
+        story += "I went to the mickey mouse club house to see " + noun2 + ". ";
+        story += "There was minnie, toodles, goofy, pete and  " + verb2 + " around the door ";
+        story += "which made the " + adjective2 + " " + noun3 + " go crazyyyyyyy!";
+        return story;
+    }
+
     public static void main(String[] args) {
-        try (scanner) {
-            System.out.println("--- Welcome to the Mad Libs Generator! ---");
-            HashMap<String, String> wordSubstitutions = collectInputs();
-            generateStory(wordSubstitutions);
-        }
-    }
+        Scanner input = new Scanner(System.in);
 
-    public static HashMap<String, String> collectInputs() {
-        HashMap<String, String> words = new HashMap<>();
-        
-        System.out.println("\nPlease provide the following words:");
-        System.out.print("1. Enter a NOUN (singular object): ");
-        
-        words.put("NOUN_S", scanner.nextLine().trim().toLowerCase());
-        
-        System.out.print("2. Enter a PLURAL NOUN: ");
-        words.put("NOUN_P", scanner.nextLine().trim().toLowerCase());
+        System.out.println("Welcome to the Avi's and Hrihaans Mad Libs Generator!");
+        System.out.println("You'll be asked to enter types of words to complete a story.\n");
 
-        System.out.print("3. Enter an ADJECTIVE: ");
-        words.put("ADJECTIVE_1", scanner.nextLine().trim().toLowerCase());
+        String noun1 = getWord(input, "noun");
+        String verb1 = getWord(input, "verb");
+        String adjective1 = getWord(input, "adjective");
+        String noun2 = getWord(input, "noun");
+        String verb2 = getWord(input, "verb");
+        String adjective2 = getWord(input, "adjective");
+        String noun3 = getWord(input, "noun");
 
-        System.out.print("4. Enter a VERB (present tense, e.g., 'run'): ");
-        words.put("VERB_P", scanner.nextLine().trim().toLowerCase());
+        String finalStory = createStory(noun1, verb1, adjective1, noun2, verb2, adjective2, noun3);
 
-        System.out.print("5. Enter a PLACE (e.g., city, planet): ");
-        words.put("PLACE", scanner.nextLine().trim());
+        System.out.println("\nHere’s your completed Mad Lib:\n");
+        System.out.println(finalStory);
 
-        System.out.print("6. Enter an ADJECTIVE (describing speed/size): ");
-        words.put("ADJECTIVE_2", scanner.nextLine().trim().toLowerCase());
-
-        System.out.print("7. Enter a proper NAME (person or character): ");
-        words.put("NAME", scanner.nextLine().trim());
-    
-        return words;
-    }
-
-    public static void generateStory(HashMap<String, String> substitutions) {
-        String storyTemplate = String.format("""
-                                             
-                                             *** Your Completed Mad Lib ***
-                                             In the universe 216 of the MCU there was a %s named %s.
-                                             They dreamt of finding all of the %s infinity stones that could gain them power and rule the world %s.
-                                             One day, while exploring the universe, they saw a group of %s
-                                             that began to %s loudly. The %s named %s quickly fought them and then the universe was protected and they gaiend the inifnity stones""",
-            substitutions.get("NOUN_S"),      
-            substitutions.get("NAME"),        
-            substitutions.get("ADJECTIVE_1"), 
-            substitutions.get("PLACE"),       
-            substitutions.get("NOUN_P"),      
-            substitutions.get("VERB_P"),      
-            substitutions.get("ADJECTIVE_2"),
-            substitutions.get("NAME")        
-        );
-
-        System.out.println(storyTemplate);
-        System.out.println("\n-----------------------------------------");
+        input.close();
     }
 }
