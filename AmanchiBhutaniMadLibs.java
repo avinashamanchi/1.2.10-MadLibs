@@ -1,14 +1,42 @@
 import java.util.Scanner;
 
+/**
+ * This class generates a Mad Libs story by prompting the user for different types of words
+ * and then substituting them into a predefined story template.
+ *
+ * @author Avinash Amanchi
+ * @author Hrihaan Bhutani
+ */
 public class AmanchiBhutaniMadLibs {
 	
-	// Helper method to prompt the user for a word type and return the input.
+	/**
+	 * Prompts the user to enter a specific type of word and returns the user's input.
+	 * This helper method simplifies the process of collecting words from the user by
+	 * displaying a clear prompt and capturing the response.
+	 *
+	 * @param input The Scanner object used to read user input from the console.
+	 * @param wordType The type of word the user should enter (e.g., "noun", "verb").
+	 * @return The word entered by the user as a String.
+	 */
 	public static String getWord(Scanner input, String wordType) {
 		System.out.print("Enter a " + wordType + ": ");
 		return input.nextLine();
 	}
 
-	// Method to construct and return the final Mad Libs story using the collected words.
+	/**
+	 * Constructs and returns the final Mad Libs story using the collected words.
+	 * This method takes seven different words as arguments and weaves them into a
+	 * humorous and coherent story.
+	 *
+	 * @param noun1 The first noun, used at the beginning of the story.
+	 * @param verb1 The first verb (past tense), used in the opening sentence.
+	 * @param adjective1 The first adjective, describing the setting.
+	 * @param pluralNoun2 A plural noun, part of the main event in the story.
+	 * @param ingVerb2 A verb ending in "-ing," describing an action.
+	 * @param adjective2 The second adjective, used in the story's climax.
+	 * @param noun3 The final noun, concluding the story.
+	 * @return A fully constructed Mad Libs story as a String.
+	 */
 	public static String createStory(String noun1, String verb1, String adjective1, String pluralNoun2, String ingVerb2, String adjective2, String noun3) {
 		String story = "";
 		
@@ -25,6 +53,13 @@ public class AmanchiBhutaniMadLibs {
 		return story;
 	}
 
+	/**
+	 * The main entry point of the Mad Libs program.
+	 * This method orchestrates the entire process, from welcoming the user and collecting
+	 * all the necessary words to generating and displaying the final story.
+	 *
+	 * @param args Command-line arguments (not used in this program).
+	 */
 	public static void main(String[] args) {
 		// Initialize Scanner object for reading user input
 		Scanner input = new Scanner(System.in);
